@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --primary-clr: #4621ad;
+    --scndry-clr: #ffee00;
+    --search-bgc: #f6f6f6;
+    --greyed-clr: #bcbccb;
+    --nav-bgc: #ffffff;
+    --nav-bar-grey: #a4afb7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.top-of-nav {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--nav-bar-grey);
+    padding-inline: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+#openedNavIcon {
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-of-nav .web-icon {
+    border-radius: 11px;
+    background-color: var(--primary-clr);
+    aspect-ratio: 1;
+    width: 35px;
+    display: grid;
+    place-items: center;
+    color: var(--scndry-clr);
+    font-weight: 900;
+    font-size: 1.4rem;
+    user-select: none;
+}
+
+.nav-wrapper {
+    background-color: var(--nav-bgc);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: 0;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.2s ease-in-out;
+}
+
+.form-wrapper {
+    margin-top: 50px;
+    position: relative;
+}
+
+.search {
+    background-color: var(--search-bgc);
+}
+
+.search::placeholder {
+    text-align: center;
+    color: #c1c1c1;
+    font-weight: 600;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40px;
+    color: var(--greyed-clr);
+}
+
+.nav-link {
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #c6c6d4;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: var(--primary-clr) !important;
 }
